@@ -91,6 +91,15 @@
         font-size: 20pt;
     }
 
+
+    .cell {
+        padding: 0.25rem;
+    }
+
+    thead {
+        text-align: left;
+    }
+
     #schedule-table {
         border-collapse: collapse;
     }
@@ -115,8 +124,8 @@
         <table border="1" id="schedule-table">
             <thead>
                 <tr>
-                    <th>Time</th>
-                    <th>Activity</th>
+                    <th class="cell">Tijd</th>
+                    <th class="cell">Activiteit</th>
                 </tr>
             </thead>
             <tbody>
@@ -151,8 +160,8 @@
         schedule.forEach(function (item, index, array) {
             const [hour, minute] = item.time.split(':').map(Number);
             let minutes = timeToMinutes(hour, minute);
-            
-            let newvalue = { activity: item.activity, startTime: item.time};
+
+            let newvalue = { activity: item.activity, startTime: item.time };
 
             newvalue.startMinutes = minutes;
 
@@ -195,10 +204,14 @@
                 const minuteStr = String(minute).padStart(2, '0'); // zorgt ervoor dat minuut 2 -> 02
 
                 const timeCell = document.createElement('td');
+                timeCell.classList.add("cell")
+                timeCell.classList.add("cell-time")
                 timeCell.innerHTML = `<span class="hour">${hourStr}</span>:<span class="minute">${minuteStr}</span>`;
                 row.appendChild(timeCell);
 
                 const activityCell = document.createElement('td');
+                activityCell.classList.add("cell")
+                activityCell.classList.add("cell-activity")
                 activityCell.textContent = item.activity;
                 row.appendChild(activityCell);
 
@@ -247,11 +260,11 @@
         function updateCurrentTime() {
             const now = new Date()
             const currentMinutes = timeToMinutes(now.getHours(), now.getMinutes())
-            const currentTimeText =String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0');
+            const currentTimeText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0');
 
             document.querySelector('#currentTime').innerHTML = currentTimeText;
 
-            betterschedule.forEach(function(item, index, array) {
+            betterschedule.forEach(function (item, index, array) {
                 if (currentMinutes <= item.endMinutes && currentMinutes >= item.startMinutes) {
                     // this is the current item
 
@@ -259,7 +272,7 @@
                     document.querySelector("#currentActivityFrom").innerHTML = item.startTime;
                     document.querySelector("#currentActivityTo").innerHTML = item.endTime;
                 }
-                
+
             })
         }
 
@@ -286,4 +299,5 @@
             });
     }
 </script>
+
 </html>
