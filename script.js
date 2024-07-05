@@ -11,7 +11,7 @@ const schedule = [
     { time: '15:20', activity: 'verzamelen bronne - start nammidagactiviteiten' },
     { time: '17:45', activity: 'vrij' },
     { time: '18:30', activity: 'avondeten - vrij' },
-    { time: '19:30', activity: 'verzamelen arena - start avondactiviteiten' },
+    { time: '19:45', activity: 'verzamelen arena - start avondactiviteiten' },
     { time: '21:30', activity: 'vrij - bar' },
     { time: '22:00', activity: 'niet meer douchen' },
     { time: '22:00', activity: 'slapen gaan 1e graad blauw bandje' },
