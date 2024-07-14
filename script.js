@@ -14,9 +14,9 @@ const schedule = [
     { time: '19:45', activity: 'verzamelen arena - start avondactiviteiten' },
     { time: '21:30', activity: 'vrij - bar' },
     { time: '22:00', activity: 'niet meer douchen' },
-    { time: '22:00', activity: 'slapen gaan 1e graad blauw bandje' },
-    { time: '22:30', activity: 'slapen gaan 2e graad groen bandje' },
-    { time: '22:45', activity: 'slapen gaan 3e graad rood bandje' }
+    { time: '22:00', activity: 'slapen gaan 1e graad roze bandje' },
+    { time: '22:30', activity: 'slapen gaan 2e graad blauw bandje' },
+    { time: '22:45', activity: 'slapen gaan 3e graad groen bandje' }
 ];
 
 let betterschedule = [];
@@ -124,7 +124,7 @@ function highlightCurrentTime() {
 function updateCurrentTime() {
     const now = new Date()
     const currentMinutes = timeToMinutes(now.getHours(), now.getMinutes())
-    const currentTimeText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0');
+    const currentTimeText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0') + String(now.getSeconds()).padStart(2, '0');
 
     document.querySelector('#currentTime').innerHTML = currentTimeText;
 
@@ -148,5 +148,5 @@ highlightCurrentTime();
 
 // Check every minute
 setInterval(highlightCurrentTime, 60000);
-setInterval(updateCurrentTime, 30000);
+setInterval(updateCurrentTime, 1000);
 updateCurrentTime();
