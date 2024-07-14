@@ -1,5 +1,5 @@
 const schedule = [
-    { time: '7:45', activity: 'niet vroeger douchen' },
+    { time: '8:00', activity: 'niet vroeger douchen' },
     { time: '8:15', activity: 'wekken' },
     { time: '8:30', activity: 'eten' },
     { time: '9:15', activity: 'verzamelen arena - lesmoment 1' },
@@ -15,8 +15,8 @@ const schedule = [
     { time: '21:30', activity: 'vrij - bar' },
     { time: '22:00', activity: 'niet meer douchen' },
     { time: '22:00', activity: 'slapen gaan 1e graad roze bandje' },
-    { time: '22:30', activity: 'slapen gaan 2e graad blauw bandje' },
-    { time: '22:45', activity: 'slapen gaan 3e graad groen bandje' }
+    { time: '22:15', activity: 'slapen gaan 2e graad blauw bandje' },
+    { time: '22:30', activity: 'slapen gaan 3e graad groen bandje' }
 ];
 
 let betterschedule = [];
