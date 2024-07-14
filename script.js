@@ -124,7 +124,7 @@ function highlightCurrentTime() {
 function updateCurrentTime() {
     const now = new Date()
     const currentMinutes = timeToMinutes(now.getHours(), now.getMinutes())
-    const currentTimeText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0') + String(now.getSeconds()).padStart(2, '0');
+    const currentTimeText = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0') + ":" + String(now.getSeconds()).padStart(2, '0');
 
     document.querySelector('#currentTime').innerHTML = currentTimeText;
 
